@@ -87,15 +87,6 @@ h2 {
   }
 }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-}
-
 .mb-20 {
   margin-bottom: 20px;
 }
@@ -110,15 +101,6 @@ a {
   color: #4a4a4a;
   -webkit-text-decoration: none;
   text-decoration: none;
-}
-
-::selection {
-  background: #fff0bc;
-  color: #b39669;
-}
-
-:focus {
-  outline: none !important;
 }
 
 .d-none {

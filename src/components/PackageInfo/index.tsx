@@ -3,7 +3,7 @@ import "./packageInfo.scss";
 import PackageModal from "../ModalWindow/index.tsx";
 import InfoItem from "../InfoItem/index.tsx";
 import { Package } from "../../API/API.tsx";
-import BuyButton from "../Button/index.tsx";
+import BuyButton from "../Button/buyButton.tsx";
 
 // Types
 type Props = {

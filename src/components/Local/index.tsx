@@ -1,8 +1,36 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import apiSettings, { Country } from "../../API/API.tsx";
-import CategoryItem from "../Category/index.tsx";
 import TabPanel from "../TabPanel/index.tsx";
+// import ShowMoreButton from "../Button/showMoreButton.tsx";
+// import BuyButton from "../Button/buyButton.tsx";
+
+
+//Icons
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { grey } from "@mui/material/colors";
+
+//Styles
+import './categoryItem.scss';
+// import ShowMoreButton from "../Button/showMoreButton.tsx";
+
+// Types
+type Props = {
+  children: any;
+  onСlick?: () => void;
+};
+
+const CategoryItem: React.FC<Props> = ({ children, onСlick }) => {
+  return (
+    <React.Fragment>
+      <div className="wrapper" onClick={onСlick}>
+        <div className="contentWrapper">{children}</div>
+        <ExpandMoreIcon sx={{ color: grey[400] }} />
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default function Local() {
   const [countries, setCountries] = React.useState<Country[]>([]);
@@ -16,6 +44,7 @@ export default function Local() {
   React.useEffect(() => {
     getAllCountries();
   }, []);
+  // https://www.airalo.com/api/v3/countries?sort=asc
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -40,6 +69,7 @@ export default function Local() {
           );
         })}
       </div>
+      {/* <ShowMoreButton url={`local-esim`}> <span>ПОКАЗАТЬ 200 СТРАН</span></ShowMoreButton> */}
     </Box>
   );
 }

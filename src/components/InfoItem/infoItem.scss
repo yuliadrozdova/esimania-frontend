@@ -108,30 +108,13 @@ button:not(:disabled) {
     widows: 3;
   }
 }
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-}
+
 a {
   color: #4a4a4a;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
-::selection {
-  background: #fff0bc;
-  color: #b39669;
-}
-ul {
-  list-style-type: none;
-  margin-bottom: 0 !important;
-}
-:focus {
-  outline: 0 !important;
-}
+
 .d-flex {
   display: flex;
 }
@@ -360,18 +343,7 @@ input {
     text-shadow: none !important;
   }
 }
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-}
-::selection {
-  background: #fff0bc;
-  color: #b39669;
-}
+
 input {
   border: none;
   // font-family: IBM Plex Sans, sans-serif;

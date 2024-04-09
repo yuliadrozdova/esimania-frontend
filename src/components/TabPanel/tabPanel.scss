@@ -59,15 +59,6 @@ a {
   }
 }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-}
-
 ::selection {
   background: $color-selection-background;
   color: $color-selection-text;
@@ -106,7 +97,7 @@ a {
       text-decoration: none;
 
       &.active-tab {
-        background-color: $color-background;
+        background: linear-gradient(#fafafa, #ffffff);
         border-color: $color-border;
         border-bottom: none;
         border-radius: 7px 7px 0 0;

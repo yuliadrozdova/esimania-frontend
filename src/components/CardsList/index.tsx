@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import TabPanel from "../TabPanel/index.tsx";
 import Box from "@mui/material/Box";
 import apiSettings, { Country } from "../../API/API.tsx";
-import PackageInfo from "../PackageInfo/index.tsx";
 import "../Regional/regional.scss";
+import PackageInfo from "../PackageInfo/index.tsx";
 
 export default function CardsList() {
   const { regionSlug } = useParams();

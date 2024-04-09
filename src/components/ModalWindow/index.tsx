@@ -49,7 +49,7 @@ const SearchCountry = ({ searchArray, callback }) => {
         data-testid="country-list-search-input"
         type="text"
         className="country-list-search w-100"
-      />{" "}
+      />
     </div>
   );
 };

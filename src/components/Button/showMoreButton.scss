@@ -1,0 +1,69 @@
+.show-all-btn-wrapper {
+  grid-gap: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  margin-top: 20px;
+}
+@media (min-width: 576px) {
+  .show-all-btn-wrapper {
+    gap: 30px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    margin-top: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .show-all-btn-wrapper {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.show-all-btn {
+  align-items: center;
+  background-color: #4a4a4a;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  display: flex;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  grid-column-start: 1;
+  height: 44px;
+  justify-content: center;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 17px 20px 16px;
+  transition: all 0.2s;
+}
+@media (min-width: 576px) {
+  .show-all-btn {
+    grid-column: span 6 / span 6;
+    grid-column-start: 4;
+  }
+}
+@media (min-width: 1024px) {
+  .show-all-btn {
+    grid-column: span 1 / span 1;
+    grid-column-start: 2;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .btn-primary-hv:hover {
+    background-color: #6f6f6f !important;
+    color: #fff !important;
+  }
+}
+@media only screen and (max-width: 768px) and (hover: hover) {
+  .btn-primary-hv:hover {
+    background-color: #4a4a4a !important;
+    color: #fff !important;
+  }
+}
+@media only screen and (max-width: 768px) and (hover: none) {
+  .btn-primary-hv:active {
+    background-color: #6f6f6f !important;
+    color: #fff !important;
+  }
+  .btn-primary-hv:focus {
+    box-shadow: none !important;
+  }
+}

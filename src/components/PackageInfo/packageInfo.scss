@@ -167,14 +167,6 @@ button:not(:disabled) {
   }
 }
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-rendering: optimizeLegibility;
-}
 .mb-40 {
   margin-bottom: 40px;
 }
@@ -189,10 +181,7 @@ button:not(:disabled) {
     margin-top: 40px;
   }
 }
-::selection {
-  background: #fff0bc;
-  color: #b39669;
-}
+
 .tx-center {
   text-align: center;
 }

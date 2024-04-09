@@ -1,8 +1,15 @@
 import * as React from "react";
-import Local from "../Local/index.tsx";
+import StoreSearch from "../StoreSearch/index.tsx";
+import Header from "../Header/index.tsx";
 
-export default function BasicTabs() {
+const PageWithStoreSearch: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <Local />
+      <React.Fragment>
+        <Header />
+        <h1 className='main-title'>Stay connected, wherever you travel, at affordable rates</h1>
+          <StoreSearch />
+          {children}
+      </React.Fragment>
   );
-}
+};
+export default PageWithStoreSearch;

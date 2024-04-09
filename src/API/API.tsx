@@ -142,13 +142,21 @@ const apiSettings = {
 
   fetchSearchEsim: async (searchTerm: string) => {
     const endpoint = `${SEARCH_BASE_URL}${searchTerm}`;
-    return await (await fetch(endpoint)).json();
+    return await (await fetch(endpoint).then((response)=>{
+      console.log(response.status)
+      if(response.status === 200){
+        return response.json()
+      }
+      throw new Error(`Error ${response.status}`);
+      
+    }).catch(err => console.log(err)));
+    // return await (await fetch(endpoint)).json();
   },
   
   fetchAvailablePackages: async (searchTerm: string) => {
     const endpoint: string = `${API_URL}operator/${searchTerm}/package?type=topup`;
     return await (await fetch(endpoint)).json();
-  },
+  }
 };
 
 export default apiSettings;
