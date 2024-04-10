@@ -2,18 +2,14 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import apiSettings, { Country } from "../../API/API.tsx";
 import TabPanel from "../TabPanel/index.tsx";
-// import ShowMoreButton from "../Button/showMoreButton.tsx";
-// import BuyButton from "../Button/buyButton.tsx";
-
+import ShowMoreButton from "../Button/ShowMoreButton.tsx";
 
 //Icons
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { grey } from "@mui/material/colors";
 
 //Styles
-import './categoryItem.scss';
-// import ShowMoreButton from "../Button/showMoreButton.tsx";
+import "./categoryItem.scss";
 
 // Types
 type Props = {
@@ -34,22 +30,38 @@ const CategoryItem: React.FC<Props> = ({ children, onСlick }) => {
 
 export default function Local() {
   const [countries, setCountries] = React.useState<Country[]>([]);
+  const [countriesType, setCountriesType] =
+    React.useState<string>("popularCountries");
 
-  const getAllCountries = async () => {
+  const getPopularCountries = async () => {
     let searchTerm = "countries?type=popular";
     const countries: Country[] = await apiSettings.fetchCountries(searchTerm);
     setCountries(countries);
+    setCountriesType("popularCountries");
+  };
+
+  const getAllCountries = async () => {
+    let searchTerm = "countries?sort=asc";
+    const countries: Country[] = await apiSettings.fetchCountries(searchTerm);
+    setCountries(countries);
+    setCountriesType("allCountries");
   };
 
   React.useEffect(() => {
-    getAllCountries();
+    getPopularCountries();
   }, []);
-  // https://www.airalo.com/api/v3/countries?sort=asc
 
   return (
     <Box sx={{ width: "100%" }}>
       <TabPanel />
-      <h2 className="typo-h1 mb-20 text-center mb-sm-40">Popular Countries</h2>
+      {countriesType === "popularCountries" && (
+        <h2 className="typo-h1 mb-20 text-center mb-sm-40">
+          Popular Countries
+        </h2>
+      )}
+      {countriesType === "allCountries" && (
+        <h2 className="typo-h1 mb-20 text-center mb-sm-40">All Countries</h2>
+      )}
       <div className="grid">
         {countries?.map((country, id) => {
           return (
@@ -69,7 +81,16 @@ export default function Local() {
           );
         })}
       </div>
-      {/* <ShowMoreButton url={`local-esim`}> <span>ПОКАЗАТЬ 200 СТРАН</span></ShowMoreButton> */}
+      {countriesType === "popularCountries" && (
+        <ShowMoreButton click={getAllCountries}>
+          <span>SHOW 200+ COUNTRIES</span>
+        </ShowMoreButton>
+      )}
+      {countriesType === "allCountries" && (
+        <ShowMoreButton click={getPopularCountries}>
+          <span>SHOW POPULAR COUNTRIES</span>
+        </ShowMoreButton>
+      )}
     </Box>
   );
 }

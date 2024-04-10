@@ -8,7 +8,6 @@ import NotFound from "./components/NotFound.tsx";
 import Global from "./components/Global/index.tsx";
 import Regional from "./components/Regional/index.tsx";
 import CardsList from "./components/CardsList/index.tsx";
-import StoreSearch from "./components/StoreSearch/index.tsx";
 import Local from "./components/Local/index.tsx";
 
 const App: React.FC = () => {
@@ -23,7 +22,6 @@ const App: React.FC = () => {
           <Route path="/regional-esim/:regionSlug" element={<Home><CardsList /></Home>} />
           <Route path="/global-esim" element={<Home><Global /></Home>} />
           <Route path="/*" element={<NotFound />} />
-          {/* <Route path="/test" element={<StoreSearch />} /> */}
         </Routes>
       </Router>
     </React.Fragment>
