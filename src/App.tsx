@@ -3,12 +3,15 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./styles/global/App.scss";
-import Home from "./components/Home/index.tsx";
-import NotFound from "./components/NotFound.tsx";
-import Global from "./components/Global/index.tsx";
-import Regional from "./components/Regional/index.tsx";
-import CardsList from "./components/CardsList/index.tsx";
-import Local from "./components/Local/index.tsx";
+import Login from "./components/Auth/Login/login.tsx";
+import Home from "./pages/Home/index.tsx";
+import Local from "./components/Product/Local/index.tsx";
+import Regional from "./components/Product/Regional/index.tsx";
+import Global from "./components/Product/Global/index.tsx";
+import CardsList from "./components/Product/CardsList/index.tsx";
+import NotFound from "./pages/NotFound/index.tsx";
+import UserProfilePage from "./pages/Profile/index.tsx";
+// import MainComponent from "./pages/test.tsx";
 
 const App: React.FC = () => {
   return (
@@ -21,6 +24,13 @@ const App: React.FC = () => {
           <Route path="/regional-esim" element={<Home><Regional /></Home>} />
           <Route path="/regional-esim/:regionSlug" element={<Home><CardsList /></Home>} />
           <Route path="/global-esim" element={<Home><Global /></Home>} />
+          <Route path="/profile/:profilePage" element={<UserProfilePage />} />
+
+
+          <Route path="/login" element={<Login />} />
+
+          {/* <Route path="/test" element={<NavigationForBlocks />} /> */}
+          
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Router>

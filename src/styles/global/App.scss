@@ -322,3 +322,29 @@ ul {
     border-left: 1px solid #b8b8b8;
   }
 }
+
+
+//////////////////////////////////
+/// 
+/// 
+.menu-item {
+  border-left: 2px solid transparent;
+}
+
+.menu-item.nuxt-link-active, .menu-item.nuxt-link-exact-active {
+  border-left-color: #4a4a4a;
+  color: #4a4a4a;
+  font-weight: 600;
+}
+
+.typo-h5, .typo-h5-regular {
+  font-size: .9375rem;
+  line-height: 1.33333;
+}
+
+.typo-h5, .typo-h6 {
+  font-weight: 500;
+}
+.border-top {
+  border-top: 1px solid #eee;
+}

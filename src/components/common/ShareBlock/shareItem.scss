@@ -1,0 +1,49 @@
+.tw-bg-facebook {
+  --tw-bg-opacity: 1;
+  background-color: #1877f2;
+  background-color: rgba(24, 119, 242, var(--tw-bg-opacity));
+}
+.tw-bg-linkedin {
+  --tw-bg-opacity: 1;
+  background-color: #0e76a8;
+  background-color: rgba(14, 118, 168, var(--tw-bg-opacity));
+}
+.tw-bg-neutral-600 {
+  --tw-bg-opacity: 1;
+  background-color: #4a4a4a;
+  background-color: rgba(74, 74, 74, var(--tw-bg-opacity));
+}
+.tw-bg-whatsapp {
+  --tw-bg-opacity: 1;
+  background-color: #25d366;
+  background-color: rgba(37, 211, 102, var(--tw-bg-opacity));
+}
+.tw-bg-white {
+  --tw-bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.tw-text-neutral-600 {
+  --tw-text-opacity: 1;
+  color: #4a4a4a;
+  color: rgba(74, 74, 74, var(--tw-text-opacity));
+}
+.tw-text-telegram {
+  --tw-text-opacity: 1;
+  background-color: #37aee2;
+  color: rgba(55, 174, 226, var(--tw-text-opacity));
+}
+
+.share-item-wrapper {
+  padding-bottom: 24px;
+}
+.share-item-title {
+  bottom: -24px;
+  white-space: nowrap;
+}
+.share-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    margin: 0 10px;
+}
