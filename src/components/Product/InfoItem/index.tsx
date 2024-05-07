@@ -20,22 +20,22 @@ function InfoItem({ name, value }) {
   let icon;
   switch (name.toLowerCase()) {
     case "coverage":
-      icon = <LanguageIcon className="icon" />;
+      icon = <LanguageIcon className="package-icon" />;
       break;
     case "data":
-      icon = <SwapVertIcon className="icon" />;
+      icon = <SwapVertIcon className="package-icon" />;
       break;
     case "calls":
-      icon = <CallIcon className="icon" />;
+      icon = <CallIcon className="package-icon" />;
       break;
     case "texts":
-      icon = <TextsmsIcon className="icon" />;
+      icon = <TextsmsIcon className="package-icon" />;
       break;
     case "validity":
-      icon = <CalendarMonthIcon className="icon" />;
+      icon = <CalendarMonthIcon className="package-icon" />;
       break;
     case "price":
-      icon = <LocalOfferIcon className="icon" />;
+      icon = <LocalOfferIcon className="package-icon" />;
       break;
   }
 

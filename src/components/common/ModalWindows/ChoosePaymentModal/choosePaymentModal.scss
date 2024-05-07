@@ -1,0 +1,121 @@
+
+
+.general-item-wrapper.height-unset {
+  flex: 1 1 auto;
+  height: auto;
+}
+ .modal-general-close .btn {
+  box-shadow: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 10;
+}
+ .modal-general .modal-body {
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+}
+/*! CSS Used from: https://www.airalo.com/_nuxt/css/152e745.css */
+.payment-choose-method-top-title {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+.payment-choose-method-top-title p {
+  color: #4a4a4a;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.1904761;
+  margin: 0;
+}
+.payment-choose-method-wrapper {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.payment-choose-method-item {
+  background-color: #fff;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+  min-height: 75px;
+  padding: 19px 20px;
+}
+.payment-choose-method-item .credit-arrow-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.payment-choose-method-item .method-title-row {
+  align-items: center;
+  display: inline-flex;
+}
+.payment-choose-method-item p {
+  color: #4a4a4a;
+  margin: 0;
+}
+.payment-choose-method-item p.method-title {
+  align-items: flex-start;
+  color: #4a4a4a;
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 1.33333;
+}
+.payment-choose-method-item p .method-title-subtitle {
+  align-items: center;
+  color: #8a8a8a;
+  display: inline-flex;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  line-height: 1.38461;
+}
+.payment-choose-method-item div.select {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.payment-choose-method-item div.select p {
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  min-width: 88px;
+  padding: 8px 9px;
+  text-align: center;
+}
+.payment-choose-method-item div.select p:hover {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+.steps {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.steps.animated {
+  transition: all 0.5s ease-out;
+}
+.steps .step {
+  flex-shrink: 0;
+  height: 100%;
+  left: 0;
+  position: relative;
+  width: 100%;
+}

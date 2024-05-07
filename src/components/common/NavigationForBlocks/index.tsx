@@ -3,20 +3,12 @@ import React from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 
-function NavigationForBlocks() {
+function NavigationForBlocks({navItems}) {
   const profileContent = {
     name: "Юлия Дроздова",
     role: "Traveler",
     email: "drozdova.y16@gmail.com",
   };
-
-  const navItems = [
-    { name: "Account Information", url: "/profile/settings" },
-    { name: "Airmoney & Membership", url: "/profile/money" },
-    { name: "Saved Cards", url: "/profile/credit-cards" },
-    { name: "Refer & Earn", url: "/profile/referral" },
-    { name: "Orders", url: "/profile/orders" },
-  ];
 
   return (
     <>
@@ -45,10 +37,6 @@ function NavigationForBlocks() {
             ))}
           </ul>
         </div>
-      </div>
-      <div className="flex mt-3 text-red-600 flex items-center cursor-pointer">
-        <span>Logout </span>
-        <LogoutIcon className='ml-10' fontSize='small'/>
       </div>
     </>
   );

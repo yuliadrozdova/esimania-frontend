@@ -1,10 +1,5 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import apiSettings, { Country, Package } from "../../../API/API.tsx";
-// import PackageInfo from "../PackageInfo/index.tsx";
-import TabPanel from "../../../components/common/TabPanel/index.tsx";
 import FormControl from "@mui/joy/FormControl";
-import FormLabel from "@mui/joy/FormLabel";
 import FormHelperText from "@mui/joy/FormHelperText";
 import Input from "@mui/joy/Input";
 import Checkbox from "@mui/joy/Checkbox";
@@ -30,9 +25,7 @@ const DeleteAccount = () => {
             take a while and can't be undone after completion.
           </p>
           <div className="d-md-grid grid-cols-md-2 grid-cols-lg-7 gap-30">
-            <button
-              className="button button-delete-outline small col-span-lg-1 col-span-lg-3 mt-5"
-            >
+            <button className="button button-delete-outline small col-span-lg-1 col-span-lg-3 mt-5">
               DELETE ACCOUNT
             </button>
           </div>
@@ -41,6 +34,7 @@ const DeleteAccount = () => {
     </div>
   );
 };
+
 
 export default function SettingsPage({ profileContent }) {
   return (

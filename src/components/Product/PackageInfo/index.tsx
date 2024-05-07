@@ -2,7 +2,7 @@ import React from "react";
 import "./packageInfo.scss";
 import InfoItem from "../InfoItem/index.tsx";
 import { Package } from "../../../API/API.tsx";
-import PackageModal from "../../common/ModalWindow/index.tsx";
+import PackageModal from "../../common/ModalWindows/PackageInfoModal/index.tsx";
 import BuyButton from "../../common/Buttons/Buy/index.tsx";
 
 // Types
@@ -27,7 +27,7 @@ const PackageInfo: React.FC<Props> = ({ props }) => {
     <React.Fragment>
       <div style={{ cursor: "pointer" }} onClick={openModal}>
         <div
-          className="c--sim_item sim-item theme-light"
+          className="sim-item theme-light"
           style={{ background: "linear-gradient(90deg, #d00423 0, #ed0425)" }}
         >
           <div className="sim-item-header tw-relative">
@@ -66,7 +66,7 @@ const PackageInfo: React.FC<Props> = ({ props }) => {
           </div>
         </div>
       </div>
-      <PackageModal props={props} isOpen={isOpen} onClose={closeModal} />
+      {isOpen && <PackageModal props={props} isOpen={isOpen} onClose={closeModal} />}
     </React.Fragment>
   );
 };

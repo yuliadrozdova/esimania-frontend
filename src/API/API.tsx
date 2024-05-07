@@ -1,4 +1,5 @@
-import { API_URL, SEARCH_BASE_URL } from "../config/config.tsx";
+import axios from "axios";
+import { API_URL, SEARCH_BASE_URL, USER_INFO_URL } from "../config/config.tsx";
 
 // Types
 export type Image = {
@@ -102,7 +103,7 @@ export type TopapPackage = {
   is_unlimited_voice: boolean;
   net_price: number;
   note: string | null;
-  operator: Operator
+  operator: Operator;
   order: number;
   price: number;
   promotions: string[] | null;
@@ -118,45 +119,107 @@ export type TopapPackage = {
   type: string;
   validity: string;
   voice: string | null;
-}
+};
 
 const apiSettings = {
   fetchCountries: async (searchTerm: string) => {
-    const endpoint: string = searchTerm
-      ? `${API_URL}${searchTerm}`
-      : `${API_URL}`;
-    return await (await fetch(endpoint)).json();
+    const endpoint = searchTerm ? `${API_URL}${searchTerm}` : API_URL;
+    try {
+      const response = await axios.get(endpoint);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+      throw error;
+    }
   },
-
   fetchGlobal: async () => {
-    const endpoint: string = `${API_URL}regions/world`;
-    return await (await fetch(endpoint)).json();
+    const endpoint = `${API_URL}regions/world`;
+    try {
+      const response = await axios.get(endpoint);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching global data:", error);
+      throw error;
+    }
   },
 
-  fetchRegions: async (searchTerm: string | null = null) => {
-    const endpoint: string = searchTerm
+  fetchRegions: async (searchTerm = null) => {
+    const endpoint = searchTerm
       ? `${API_URL}regions/${searchTerm}`
       : `${API_URL}regions`;
-    return await (await fetch(endpoint)).json();
+    try {
+      const response = await axios.get(endpoint);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching regions data:", error);
+      throw error;
+    }
   },
 
-  fetchSearchEsim: async (searchTerm: string) => {
+  fetchSearchEsim: async (searchTerm) => {
     const endpoint = `${SEARCH_BASE_URL}${searchTerm}`;
-    return await (await fetch(endpoint).then((response)=>{
-      console.log(response.status)
-      if(response.status === 200){
-        return response.json()
+    try {
+      const response = await axios.get(endpoint);
+      if (response.status === 200) {
+        return response.data;
+      } else {
+        throw new Error(`Error ${response.status}`);
       }
-      throw new Error(`Error ${response.status}`);
-      
-    }).catch(err => console.log(err)));
-    // return await (await fetch(endpoint)).json();
+    } catch (error) {
+      console.error("Error fetching search eSIM data:", error);
+      throw error;
+    }
   },
-  
-  fetchAvailablePackages: async (searchTerm: string) => {
-    const endpoint: string = `${API_URL}operator/${searchTerm}/package?type=topup`;
-    return await (await fetch(endpoint)).json();
-  }
+
+  fetchPackage: async (searchTerm) => {
+    const endpoint = `${API_URL}packages/${searchTerm}`;
+    try {
+      const response = await axios.get(endpoint);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching available packages:", error);
+      throw error;
+    }
+  },
+
+  fetchAvailablePackages: async (searchTerm) => {
+    const endpoint = `${API_URL}operator/${searchTerm}/package?type=topup`;
+    try {
+      const response = await axios.get(endpoint);
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching available packages:", error);
+      throw error;
+    }
+  },
+
+  fetchReferralEnroll: async () => {
+    const endpoint = `${USER_INFO_URL}referral/enroll`;
+    // try {
+    //   const response = await axios.get(endpoint);
+    //   return response.data;
+    // } catch (error) {
+
+    //   console.error('Error fetching referral enrollment data:', error);
+    //   throw error; //405 Method Not Allowed
+    // }
+    return {
+      show_banner: true,
+      code: "YULIYA3205",
+      link: "https://ref.airalo.com/P4eB",
+    };
+  },
+
+  fetchCheckouts: async (id) => {
+    const endpoint = `${API_URL}checkouts`;
+    try {
+      const response = await axios.post(endpoint, { package_id: id });
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching global data:", error);
+      throw error;
+    }
+  },
 };
 
 export default apiSettings;

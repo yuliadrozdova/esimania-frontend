@@ -1,7 +1,7 @@
 import React from "react";
-import InfoItem from "../../Product/InfoItem/index.tsx";
-import { Package } from "../../../API/API.tsx";
-import TopupSlider from "../Slider/index.tsx";
+import InfoItem from "../../../Product/InfoItem/index.tsx";
+import { Package } from "../../../../API/API.tsx";
+import TopupSlider from "../../Slider/index.tsx";
 import Modal from "@mui/material/Modal";
 
 //Icons
@@ -16,7 +16,8 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import LteMobiledataIcon from "@mui/icons-material/LteMobiledata";
 
 //Styles
-import "./modalWindow.scss";
+// import "../ModalWindows/modalWindow.scss";
+import './../../ModalWindows/modalWindow.scss';
 
 type Props = {
   props: Package;
@@ -39,7 +40,7 @@ const SearchCountry = ({ searchArray, callback }) => {
 
   return (
     <div className="country-list-search-container">
-      <span className="icon search">
+      <span className="package-icon search">
         <SearchIcon color="action" />
       </span>
       <input
@@ -58,7 +59,8 @@ const SupportedCountries = ({ props }) => {
   const [countries, setCountries] = React.useState(props.operator.countries);
 
   return (
-    <div className="c--shared_country-list country-list-wrapper type-inline">
+    // <div className="c--shared_country-list country-list-wrapper type-inline">
+    <div className="country-list-wrapper type-inline">
       <div className="country-list-header mb-20">
         <p className="title-sub">Supported Countries</p>
       </div>
@@ -206,7 +208,7 @@ const PackageModal: React.FC<Props> = ({ props, isOpen, onClose }) => {
       onClose();
     }
   };
-
+  console.log(props);
   return (
     <Modal
       open={isOpen}
@@ -287,6 +289,9 @@ const PackageModal: React.FC<Props> = ({ props, isOpen, onClose }) => {
                 <div className="tw-w-1/2">
                   <button
                     type="button"
+                    onClick={() => {
+                      window.location.href = `/esim-buy/${props.slug}`;
+                    }}
                     className="btn topup-package-price-btn tw-font-semibold tw-text-4.5 tw-leading-4 tw-py-4 btn-secondary btn-block"
                   >
                     BUY
