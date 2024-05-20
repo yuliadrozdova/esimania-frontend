@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import apiSettings, { Country, Package } from "../../../API/API.tsx";
 import PackageInfo from "../PackageInfo/index.tsx";
 import TabPanel from "../../common/TabPanel/index.tsx";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ButtonBlock({ callback }) {
   const [selectionStyle, setSelectionStyle] = React.useState({
@@ -26,7 +27,7 @@ function ButtonBlock({ callback }) {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-sm-15 mb-30">
+    <div className="flex justify-content-center mt-sm-15 mb-30">
       <div className="data-type-tabs overflow-hidden box-rounded">
         <button
           onClick={btnClick}
@@ -60,6 +61,7 @@ export default function Global() {
   const [otherEsims, setOtherEsims] = React.useState<Package[]>([]);
   const [callsEsims, setCallsEsims] = React.useState<Package[]>([]);
   const [activeTab, setActiveTab] = React.useState<string>("others-tab");
+  const [loading, setLoading] = React.useState(true);
 
   const getGlobalEsims = async () => {
     const esims: Country = await apiSettings.fetchGlobal();
@@ -76,6 +78,7 @@ export default function Global() {
       setOtherEsims(otherArray);
       setCallsEsims(callsArray);
       setGlobalEsims(otherArray);
+      setLoading(false);
     }
     func();
   }, []);
@@ -96,11 +99,17 @@ export default function Global() {
     <Box sx={{ width: "100%" }}>
       <TabPanel />
       <ButtonBlock callback={setActiveTab} />
-      <div className="grid">
+      {loading ? (
+        <div className="flex justify-center items-center h-[20vh]">
+          <CircularProgress />
+        </div>
+      ) : (
+      <div className="customGrid">
         {globalEsims?.map((pack, id) => {
           return <PackageInfo props={pack} />;
         })}
       </div>
+      )}
     </Box>
   );
 }

@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
   return (
     <div className="header-navigation d-sm-block ml-auto">
       <nav>
-        <ul className="cf d-flex align-items-center flex-wrap justify-content-end">
+        <ul className="cf flex align-items-center flex-wrap justify-content-end">
           <li className="nav-item-with-sub-menu">
             <div
               dir="ltr"
@@ -28,12 +28,12 @@ const Navigation: React.FC = () => {
               <ul className="c--shared_header_sub-menu sub-menu size-small">
                 <li>
                   <a
-                    href="/partner-with-us/airalo-partner-hub"
+                    href="/partner-with-us/partner-hub"
                     className=""
                     target="_self"
-                    data-testid="Airalo Partner Platform-item"
+                    data-testid="Partner Platform-item"
                   >
-                    Airalo Partner Platform
+                    Partner Platform
                   </a>
                 </li>
                 <li>
@@ -68,12 +68,12 @@ const Navigation: React.FC = () => {
                 </li>
                 <li>
                   <a
-                    href="/partner-with-us/airalo-for-corporates"
+                    href="/partner-with-us/esim-for-corporates"
                     className=""
                     target="_self"
-                    data-testid="Airalo for Corporates-item"
+                    data-testid="Esim for Corporates-item"
                   >
-                    Airalo for Corporates
+                    Esim for Corporates
                   </a>
                 </li>
               </ul>
@@ -93,12 +93,12 @@ const Navigation: React.FC = () => {
               <ul className="c--shared_header_sub-menu sub-menu size-small">
                 <li>
                   <a
-                    href="/about-us/about-airalo"
+                    href="/about-us/about-us"
                     target="_self"
-                    data-testid="About Airalo-item"
+                    data-testid="About us"
                     className=""
                   >
-                    About Airalo
+                    About Us
                   </a>
                 </li>
                 <li>
@@ -179,9 +179,9 @@ const MoneyHeader: React.FC = () => {
       <div data-testid="money-header" className="c--shared_header_money">
         <a
           href="/profile/money"
-          className="display-flex flex-column flex-sm-row justify-content-center align-items-end align-items-sm-center text-decoration-none color-text-primary"
+          className="flex flex-sm-row justify-content-center align-items-end align-items-sm-center text-decoration-none color-text-primary"
         >
-          <span className="d-flex justify-content-start align-items-center">
+          <span className="flex justify-content-start align-items-center">
             <PixIcon
               sx={{ color: grey[500] }}
               fontSize="small"
@@ -193,7 +193,7 @@ const MoneyHeader: React.FC = () => {
           </span>
           <span
             data-testid="money-value"
-            className="money-box display-flex justify-content-center align-items-center border-default border-solid color-border-light border-sm-unset box-rounded px-10 px-sm-0 py-3px py-sm-0 ml-5px"
+            className="money-box flex justify-content-center align-items-center border-default border-solid color-border-light border-sm-unset box-rounded px-10 px-sm-0 py-3px py-sm-0 ml-5px"
           >
             <sup className="typo-input-heading">US$</sup>
             <span className="typo-h3">0.00</span>
@@ -205,10 +205,11 @@ const MoneyHeader: React.FC = () => {
 };
 
 const AuthorizedNavigation: React.FC = () => {
+  const userName = 'Ivan Ivanov';
   return (
     <div className="header-navigation d-sm-block">
       <nav>
-        <ul className="cf d-flex align-items-center flex-wrap justify-content-end border-l border-l-solid color-border-left-light pl-10 ml-10 pl-lg-20 ml-lg-20">
+        <ul className="cf flex align-items-center flex-wrap justify-content-end border-l border-l-solid color-border-left-light pl-10 ml-10 pl-lg-20 ml-lg-20">
           <li data-testid="account-menu" className="">
             <div
               dir="ltr"
@@ -240,13 +241,9 @@ const AuthorizedNavigation: React.FC = () => {
                   fontSize="small"
                   className="c--shared_header_item header-item mr-10"
                 />
-                Юлия Дроздова
+                {userName}
               </span>
               <KeyboardArrowDownIcon fontSize="small" className="ml-10" />
-
-              {/* <span className="arrow-icon ml-10">
-                <span className="airalo-icon-arrow-down tw-text-2 airalo-icon-wrapper"></span>
-              </span> */}
             </div>
             <div className="header-sub-menu-wrapper">
               <ul className="c--shared_header_sub-menu sub-menu size-small">
@@ -322,15 +319,15 @@ const AuthorizedNavigation: React.FC = () => {
 export default function Header() {
   return (
     <header className="c--shared_header header">
-      <div className="header-content d-flex align-items-center">
-        <div className="header-logo-link-wrapper d-flex justify-content-center align-items-center w-full align-items-md-start w-md-auto">
+      <div className="header-content flex align-items-center">
+        <div className="header-logo-link-wrapper flex justify-content-center align-items-center w-full align-items-md-start w-md-auto">
           <a
             href="/"
             className="display-inline-flex nuxt-link-exact-active nuxt-link-active"
             aria-current="page"
           >
             <img
-              src="https://cdn.airalo.com/assets/images/svg/Logo.svg?w=149&amp;h=44"
+              src=""
               width="149"
               height="44"
               alt="logo"
@@ -343,7 +340,7 @@ export default function Header() {
         <div className="store-link tw-py-2.5 lg:tw-block tw-border-solid tw-border-0 tw-border-zinc-300 ltr:tw-pl-5 ltr:tw-ml-5 ltr:tw-border-l rtl:tw-pr-5 rtl:tw-mr-5 rtl:tw-border-r">
           <a
             href="/"
-            className="d-flex justify-content-start align-items-center !tw-no-underline !tw-text-primary nuxt-link-exact-active nuxt-link-active"
+            className="flex justify-content-start align-items-center !tw-no-underline !tw-text-primary nuxt-link-exact-active nuxt-link-active"
             aria-current="page"
           >
             <StorefrontIcon sx={{ color: grey[500] }} fontSize="small" />

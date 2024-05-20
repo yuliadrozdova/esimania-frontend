@@ -77,7 +77,7 @@ const SupportedCountries = ({ props }) => {
             {countries.map((country, id) => {
               return (
                 <li key={country.slug}>
-                  <div className="c--shared_country-name-in-flag d-flex align-items-center country-name flex-row-reverse justify-content-between">
+                  <div className="c--shared_country-name-in-flag flex align-items-center country-name flex-row-reverse justify-content-between">
                     <div className="flag country-list-item">
                       <img
                         src={country.image.url}
@@ -125,7 +125,7 @@ const AdditionalInfo = ({ otherInfo }) => {
                   </p>
                 </div>
                 <div className="info-right-icon">
-                  <span className="right-icon d-flex">
+                  <span className="right-icon flex">
                     <InfoOutlinedIcon id="networks-info" fontSize="small" />
                   </span>
                 </div>

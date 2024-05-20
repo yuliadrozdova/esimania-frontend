@@ -10,6 +10,7 @@ import OrdersPage from "./Orders/index.tsx";
 import NavigationForBlocks from "../../components/common/NavigationForBlocks/index.tsx";
 import BreadcrumbsComponent from "../../components/common/Breadcrumbs/index.tsx";
 import LogoutButton from "../../components/common/Buttons/Logout/index.tsx";
+import Footer from "../../components/common/Footer/index.tsx";
 
 const UserProfilePage: React.FC = () => {
   const { profilePage } = useParams();
@@ -61,15 +62,15 @@ const UserProfilePage: React.FC = () => {
   }, []);
 
   const profileContent = {
-    name: "Юлия Дроздова",
+    name: "Ivan Ivanov",
     role: "Traveler",
-    email: "drozdova.y16@gmail.com",
+    email: "ivanov.i@gmail.com",
     password: "No password created",
   };
 
   const navItems = [
     { name: "Account Information", url: "/profile/settings" },
-    { name: "Airmoney & Membership", url: "/profile/money" },
+    { name: "Esimoney & Membership", url: "/profile/money" },
     { name: "Saved Cards", url: "/profile/credit-cards" },
     { name: "Refer & Earn", url: "/profile/referral" },
     { name: "Orders", url: "/profile/orders" },
@@ -89,6 +90,7 @@ const UserProfilePage: React.FC = () => {
           <div className="md:w-2/3">{childComponent}</div>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };

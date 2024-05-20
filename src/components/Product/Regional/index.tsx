@@ -3,14 +3,17 @@ import Box from "@mui/material/Box";
 import apiSettings, { Country } from "../../../API/API.tsx";
 import TabPanel from "../../common/TabPanel/index.tsx";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CircularProgress from "@mui/material/CircularProgress";
 import "./regional.scss";
 
 export default function Regional() {
   const [regionsEsims, setRegionsEsims] = React.useState<Country[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   const getRegionsEsims = async () => {
     const esims: Country[] = await apiSettings.fetchRegions();
     setRegionsEsims(esims);
+    setLoading(false);
   };
 
   React.useEffect(() => {
@@ -42,33 +45,39 @@ export default function Regional() {
     <Box sx={{ width: "100%" }}>
       <TabPanel />
       <h2 className="typo-h1 mb-20 text-center mb-sm-40">Regions</h2>
-      <div className="grid">
-        {regionsEsims?.map((region, id) => {
-          return (
-            <div id={`regional-${region.id}`} className="store-item aloo">
-              <div className="c--homepage_country-list-item country-item">
-                <div>
-                  <a href={`/regional-esim/${region.slug}`} className="">
-                    <div className="c--shared_country-name-in-flag d-flex justify-content-start align-items-center country-name">
-                      <div className="flag country-list-item">
-                        <img
-                          src={region.image.url}
-                          alt={region.slug}
-                          width="37"
-                          height="27.75"
-                          className="lazyLoad isLoaded"
-                        />
+      {loading ? (
+        <div className="flex justify-center items-center h-[20vh]">
+          <CircularProgress />
+        </div>
+      ) : (
+        <div className="customGrid">
+          {regionsEsims?.map((region, id) => {
+            return (
+              <div id={`regional-${region.id}`} className="store-item">
+                <div className="c--homepage_country-list-item country-item">
+                  <div>
+                    <a href={`/regional-esim/${region.slug}`} className="">
+                      <div className="c--shared_country-name-in-flag flex justify-content-start align-items-center country-name">
+                        <div className="flag country-list-item">
+                          <img
+                            src={region.image.url}
+                            alt={region.slug}
+                            width="37"
+                            height="27.75"
+                            className="lazyLoad isLoaded"
+                          />
+                        </div>
+                        <p>{getRegionName(region.slug)}</p>
                       </div>
-                      <p>{getRegionName(region.slug)}</p>
-                    </div>
-                    <ExpandMoreIcon />
-                  </a>
+                      <ExpandMoreIcon />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </Box>
   );
 }

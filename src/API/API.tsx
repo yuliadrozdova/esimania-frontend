@@ -206,7 +206,7 @@ const apiSettings = {
     return {
       show_banner: true,
       code: "YULIYA3205",
-      link: "https://ref.airalo.com/P4eB",
+      link: "",
     };
   },
 

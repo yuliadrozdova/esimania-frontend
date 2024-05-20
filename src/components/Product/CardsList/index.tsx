@@ -6,7 +6,7 @@ import apiSettings, { Country } from "../../../API/API.tsx";
 import PackageInfo from "../PackageInfo/index.tsx";
 import ShowMoreButton from "../../common/Buttons/ShowMore/index.tsx";
 import TabPanel from "../../common/TabPanel/index.tsx";
-
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function CardsList() {
   const { regionSlug } = useParams();
@@ -15,11 +15,13 @@ export default function CardsList() {
   const [buttonType, setButtonType] = React.useState<string>(
     regionSlug ? "allRegion" : "popularCountries"
   );
+  const [loading, setLoading] = React.useState(true);
 
   const getRegionEsims = async () => {
     const response: Country = await apiSettings.fetchRegions(regionSlug);
     setEsims(response);
     setButtonType("allRegion");
+    setLoading(false);
   };
 
   const getCountry = async () => {
@@ -27,6 +29,7 @@ export default function CardsList() {
     const response: Country = await apiSettings.fetchCountries(searchTerm);
     setEsims(response);
     setButtonType("popularCountries");
+    setLoading(false);
   };
 
   React.useEffect(() => {
@@ -51,15 +54,21 @@ export default function CardsList() {
       <h2 id="store-title" className="typo-h1 mb-20 text-center mb-sm-40">
         {esims?.title}
       </h2>
-      <div className="grid">
-        {esims?.packages?.map((pack, id) => {
-          return (
-            <div key={pack.slug}>
-              <PackageInfo props={pack} />
-            </div>
-          );
-        })}
-      </div>
+      {loading ? (
+        <div className="flex justify-center items-center h-[20vh]">
+          <CircularProgress />
+        </div>
+      ) : (
+        <div className="customGrid">
+          {esims?.packages?.map((pack, id) => {
+            return (
+              <div key={pack.slug}>
+                <PackageInfo props={pack} />
+              </div>
+            );
+          })}
+        </div>
+      )}
       {buttonType === "popularCountries" && (
         <ShowMoreButton click={goToPopularCountries}>
           <span>SHOW POPULAR COUNTRIES</span>

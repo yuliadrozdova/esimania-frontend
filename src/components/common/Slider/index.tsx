@@ -3,6 +3,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import apiSettings, { TopapPackage } from "../../../API/API.tsx";
 import InfoItem from "../../Product/InfoItem/index.tsx";
+import CircularProgress from "@mui/material/CircularProgress";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./slider.scss";
@@ -70,44 +71,54 @@ const SwiperSlider = ({ data }) => {
 
 function TopupSlider({ operatorId }) {
   const [packages, setPackages] = React.useState<TopapPackage[]>([]);
+  const [loading, setLoading] = React.useState(true);
 
   const getPackages = async () => {
     const response: TopapPackage[] = await apiSettings.fetchAvailablePackages(
       operatorId
     );
     setPackages(response);
+    setLoading(false);
   };
 
   React.useEffect(() => {
     getPackages();
   }, []);
 
-  if (packages?.length === 0) {
-    return <></>;
-  }
+  // if (packages?.length === 0) {
+  //   return <></>;
+  // }
 
   return (
-    <div className="sim-detail-available-packages-wrapper">
-      <div
-        data-testid="top-up-header"
-        className="sim-detail-available-packages-header"
-      >
-        <p>
-          Available Top-up Packages
-          <span>({packages?.length})</span>
-        </p>
-      </div>
-      <div className="sim-detail-available-packages">
-        <div
-          data-testid="top-up-carousel"
-          className="-carousel swiper-card-package-carousel"
-        >
-          <div className="swiper-container swiper-container-initialized swiper-container-horizontal">
-            <SwiperSlider data={packages} />
+    <>
+      {loading ? (
+        <div className="flex justify-center items-center h-[20vh]">
+          <CircularProgress />
+        </div>
+      ) : (
+        <div className="sim-detail-available-packages-wrapper">
+          <div
+            data-testid="top-up-header"
+            className="sim-detail-available-packages-header"
+          >
+            <p>
+              Available Top-up Packages
+              <span>({packages?.length})</span>
+            </p>
+          </div>
+          <div className="sim-detail-available-packages">
+            <div
+              data-testid="top-up-carousel"
+              className="-carousel swiper-card-package-carousel"
+            >
+              <div className="swiper-container swiper-container-initialized swiper-container-horizontal">
+                <SwiperSlider data={packages} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 

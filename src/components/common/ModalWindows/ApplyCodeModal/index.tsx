@@ -70,19 +70,19 @@ const ApplyCodeModal: React.FC<Props> = ({ isOpen, onClose }) => {
       aria-describedby="modal-modal-description"
     >
     <div className="modal-dialog modal-general modal-dialog-centered"><span></span>
-  <div id="payment-33899454-code-or-airmoney-modal___BV_modal_content_" className="modal-content">
-    <div id="payment-33899454-code-or-airmoney-modal___BV_modal_body_" className="modal-body">
+  <div id="payment-33899454-code-or-esimoney-modal___BV_modal_content_" className="modal-content">
+    <div id="payment-33899454-code-or-esimoney-modal___BV_modal_body_" className="modal-body">
       <div  dir="ltr" className="c--modals_general-modal modal-general-close"><button 
           type="button" className="btn"><span  data-testid="close-button"
-            className="airalo-icon-close-round-filled tw-text-5.5 tw-text-neutral-600"></span></button></div>
+            className="icon-close-round-filled tw-text-5.5 tw-text-neutral-600"></span></button></div>
       <div 
         className="general-item-wrapper relative tw-flex tw-flex-col tw-h-full tw-w-full tw-pt-10 height-unset"
         style={{minHeight: "540px;"}}>
-        <div  data-testid="Apply Code / Use Airmoney-title" className="general-item-wrapper-header mb-20">
-          <p >Apply Code / Use Airmoney</p>
+        <div  data-testid="Apply Code / Use Esimoney-title" className="general-item-wrapper-header mb-20">
+          <p >Apply Code / Use Esimoney</p>
         </div>
         <div 
-          className="c--checkout_apply-code-use-airmoney payment-apply-use-wrapper pb-40" checkout-id="33899454">
+          className="c--checkout_apply-code-use-esimoney payment-apply-use-wrapper pb-40" checkout-id="33899454">
           <div  className="payment-apply-use-header px-20 mb-20">
             <p  className="title-sub">
               Apply Code
@@ -93,7 +93,7 @@ const ApplyCodeModal: React.FC<Props> = ({ isOpen, onClose }) => {
           </div>
           <div  className="payment-apply-use-apply-form px-20">
             <form  className="">
-              <div  className="payment-apply-use-row d-flex justify-content-between align-items-start">
+              <div  className="payment-apply-use-row flex justify-content-between align-items-start">
                 <div  className="payment-apply-use-input">
                   <div  className="mb-0">
                     <div  className="general-input">
@@ -107,7 +107,7 @@ const ApplyCodeModal: React.FC<Props> = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div  className="payment-apply-use-input-button"><button  type="submit"
-                    data-testid="apply-airmoney-button" className="button button-secondary block btn-primary-hv">
+                    data-testid="apply-esimoney-button" className="button button-secondary block btn-primary-hv">
                     APPLY
                   </button></div>
               </div>
@@ -115,24 +115,24 @@ const ApplyCodeModal: React.FC<Props> = ({ isOpen, onClose }) => {
           </div>
           <div  className="payment-apply-use-seperator mt-30 mb-30">
             <p >
-              OR USE AIRMONEY
+              OR USE Esimoney
             </p>
           </div>
-          <div  className="payment-apply-use-airmoney-wrapper px-20">
+          <div  className="payment-apply-use-esimoney-wrapper px-20">
             <p  className="title-sub">
-              Use Airmoney
+              Use Esimoney
             </p>
             {/* <p  className="title-sub-description">You have a total of 
             <span 
-                place="amount">US $0.00</span> Airmoney in your wallet.</p> */}
+                place="amount">US $0.00</span> Esimoney in your wallet.</p> */}
             <div  className="insufficient-banner mt-20">
               <div  className="insufficient-banner-inner">
                 <p  className="message">
-                  You don’t have enough Airmoney for this purchase. The minimum Airmoney amount must be US$1.
+                  You don’t have enough Esimoney for this purchase. The minimum Esimoney amount must be US$1.
                 </p>
               </div>
               <div  className="insufficient-banner-image"><img 
-                  src="https://cdn.airalo.com/assets/images/svg/ic_info_banner.svg?w=75&amp;h=75" width="75" height="75"
+                  src="" width="75" height="75"
                   alt="" loading="lazy" /></div>
             </div>   
           </div>

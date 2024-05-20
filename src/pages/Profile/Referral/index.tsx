@@ -2,6 +2,8 @@ import * as React from "react";
 import ShareBlock from "../../../components/common/ShareBlock/index.tsx";
 import PositionedSnackbar from "../../../components/common/Snackbar/index.tsx";
 import apiSettings from "../../../API/API.tsx";
+import CopyAllIcon from "@mui/icons-material/CopyAll";
+import { grey } from "@mui/material/colors";
 
 // Types
 export type ReferralType = {
@@ -21,7 +23,6 @@ export default function ReferralPage() {
 
     getReferral();
   }, []);
-  console.log(referral);
 
   return (
     <>
@@ -42,13 +43,17 @@ const CopyableInput = ({ referralData }) => {
     navigator.clipboard
       .writeText(referralData.code)
       .then(() => {
-        setText("Текст скопирован в буфер обмена");
+        setText("The text was successfully copied to the clipboard");
         setIsOpen(true);
       })
       .catch(() => {
-        setText("Не удалось скопировать текст в буфер обмена");
+        setText("Failed to copy text to clipboard");
         setIsOpen(true);
       });
+
+      setTimeout(() => {
+        setIsOpen(false);
+      }, 3000);
   };
 
   return (
@@ -56,10 +61,12 @@ const CopyableInput = ({ referralData }) => {
       {isOpen && <PositionedSnackbar text={text} setIsOpen={setIsOpen} />}
       {referralData && (
         <div
+          title="Click to copy code"
           onClick={copyToClipboard}
-          className="display-flex justify-content-between align-items-center color-bg-white text-black box-rounded shadowed w-full px-20 pt-15 pb-5 pt-5 mt-10 mb-10 cursor-pointer"
+          className="flex justify-content-between align-items-center color-bg-white text-black box-rounded shadowed w-full px-20 pt-15 pb-5 pt-5 mt-10 mb-10 cursor-pointer"
         >
           {referralData.code}
+          <CopyAllIcon sx={{ color: grey[600] }} />
         </div>
       )}
     </div>

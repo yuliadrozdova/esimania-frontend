@@ -17,7 +17,7 @@ const ShareItem = ({ href, title, icon, bgClass }) => {
       href={href}
       target="_blank"
       rel="noopener"
-      className={`square-44 relative box-rounded shadowed display-flex justify-content-center 
+      className={`square-44 relative box-rounded shadowed flex justify-content-center 
       align-items-center mx-30 cursor-pointer color-text-primary text-decoration-none share-button ${bgClass}`}
     >
       {icon}
@@ -29,7 +29,7 @@ const ShareBlock = () => {
   const message =
     "Hey, have you tried an eSIM? Get US$3 off your first eSIM data pack from Esimania. Use code YULIYA3205 when you sign up or apply it at checkout. https://ref.esimania.com/";
   return (
-    <div className="display-flex align-items-start justify-content-center flex-wrap row-gap-40 mt-30 share-item-wrapper">
+    <div className="flex align-items-start justify-content-center flex-wrap row-gap-40 mt-30 share-item-wrapper">
       
       <ShareItem
         href={`https://www.facebook.com/sharer/sharer.php?quote=${message}@esimaniacom&amp;u=https://ref.esimania.com/`}

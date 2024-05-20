@@ -43,14 +43,6 @@ h2 {
   display: none !important;
 }
 
-// .d-flex {
-//   display: flex !important;
-// }
-
-// .justify-content-start {
-//   justify-content: flex-start !important;
-// }
-
 .align-items-center {
   align-items: center !important;
 }
@@ -107,10 +99,6 @@ a {
   display: none;
 }
 
-.d-flex {
-  display: flex;
-}
-
 .d-grid {
   display: grid;
 }
@@ -122,12 +110,6 @@ a {
 .store-col-span-1 {
   grid-column: span 1 / span 1;
 }
-
-// @media (min-width: 576px) {
-//   .store-grid-cols-sm-2 {
-//     grid-template-columns: repeat(2, minmax(0, 1fr));
-//   }
-// }
 
 .gap-10 {
   gap: 10px;
@@ -226,26 +208,6 @@ a {
   line-height: 1.2;
 }
 
-.country-name {
-  padding-right: 12px;
-  width: 100%;
-}
-
-.country-name p {
-  color: #4a4a4a;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.3333;
-  margin: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-// .country-name .flag.country-list-item {
-//   max-height: 28px;
-// }
 
 .country-name .flag + p {
   margin-left: 15px;

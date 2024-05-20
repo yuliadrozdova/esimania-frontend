@@ -1,13 +1,11 @@
 "use client";
 import React from "react";
-import LogoutIcon from "@mui/icons-material/Logout";
-
 
 function NavigationForBlocks({navItems}) {
   const profileContent = {
-    name: "Юлия Дроздова",
+    name: "Ivan Ivanov",
     role: "Traveler",
-    email: "drozdova.y16@gmail.com",
+    email: "ivanov.i@gmail.com",
   };
 
   return (
@@ -25,7 +23,7 @@ function NavigationForBlocks({navItems}) {
               <li key={index}>
                 <a
                   href={item.url}
-                  className={`menu-item typo-h5 color-text-secondary text-decoration-none display-flex px-20 py-5px ${
+                  className={`menu-item typo-h5 color-text-secondary text-decoration-none flex px-20 py-5px ${
                     window.location.pathname === item.url
                       ? "nuxt-link-active"
                       : ""
