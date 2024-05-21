@@ -1,5 +1,5 @@
 import { Cookies } from "react-cookie";
-import { API_URL } from "../config/config";
+import { API_URL } from "../config/config.tsx";
 import axios from "axios";
 
 const cookies = new Cookies();

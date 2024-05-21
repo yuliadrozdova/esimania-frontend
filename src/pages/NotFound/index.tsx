@@ -2,7 +2,7 @@ import React from "react";
 
 const NotFound = () => {
   return (
-    <div style={{height: '100vh'}}>
+    <div className="h-screen">
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
     <div className="text-center">
       <p className="text-base font-semibold text-indigo-600">404</p>
@@ -15,9 +15,9 @@ const NotFound = () => {
         >
           Go back home
         </a>
-        <a href="#" className="text-sm font-semibold text-gray-900">
+        {/* <a href="/support" className="text-sm font-semibold text-gray-900">
           Contact support <span aria-hidden="true">&rarr;</span>
-        </a>
+        </a> */}
       </div>
     </div>
   </main></div>

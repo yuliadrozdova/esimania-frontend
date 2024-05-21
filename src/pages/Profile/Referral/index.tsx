@@ -35,30 +35,39 @@ export default function ReferralPage() {
   );
 }
 
+interface IAlert {
+  text: string;
+  isSuccess: boolean;
+}
 const CopyableInput = ({ referralData }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [text, setText] = React.useState<string>("");
+  const [message, setMessage] = React.useState<IAlert>({
+    text: "",
+    isSuccess: false,
+  });
 
   const copyToClipboard = () => {
     navigator.clipboard
       .writeText(referralData.code)
       .then(() => {
-        setText("The text was successfully copied to the clipboard");
+        setMessage({
+          text: "The text was successfully copied to the clipboard",
+          isSuccess: true,
+        });
         setIsOpen(true);
       })
       .catch(() => {
-        setText("Failed to copy text to clipboard");
+        setMessage({
+          text: "Failed to copy text to clipboard",
+          isSuccess: false,
+        });
         setIsOpen(true);
       });
-
-      setTimeout(() => {
-        setIsOpen(false);
-      }, 3000);
   };
 
   return (
     <div>
-      {isOpen && <PositionedSnackbar text={text} setIsOpen={setIsOpen} />}
+      {isOpen && <PositionedSnackbar message={message} setIsOpen={setIsOpen} />}
       {referralData && (
         <div
           title="Click to copy code"
