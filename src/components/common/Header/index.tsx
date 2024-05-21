@@ -7,7 +7,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import PixIcon from "@mui/icons-material/Pix";
 import { grey, red } from "@mui/material/colors";
 import "./header.scss";
-import { IS_AUTH } from "../../../config/config.tsx";
+import { isAuthenticated } from "../../../API/auth/authHelper.tsx";
 
 const Navigation: React.FC = () => {
   return (
@@ -205,7 +205,7 @@ const MoneyHeader: React.FC = () => {
 };
 
 const AuthorizedNavigation: React.FC = () => {
-  const userName = 'Ivan Ivanov';
+  const userName = "Ivan Ivanov";
   return (
     <div className="header-navigation d-sm-block">
       <nav>
@@ -317,6 +317,7 @@ const AuthorizedNavigation: React.FC = () => {
 };
 
 export default function Header() {
+  const IS_AUTH = isAuthenticated();
   return (
     <header className="c--shared_header header">
       <div className="header-content flex align-items-center">

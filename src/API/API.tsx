@@ -1,5 +1,4 @@
-import axios from "axios";
-import { API_URL, SEARCH_BASE_URL, USER_INFO_URL } from "../config/config.tsx";
+import { API_URL } from "./config/config.tsx";
 
 // Types
 export type Image = {
@@ -123,9 +122,9 @@ export type TopapPackage = {
 
 const apiSettings = {
   fetchCountries: async (searchTerm: string) => {
-    const endpoint = searchTerm ? `${API_URL}${searchTerm}` : API_URL;
+    const endpoint = searchTerm ? `v3/${searchTerm}` : `v3/`;
     try {
-      const response = await axios.get(endpoint);
+      const response = await API_URL.get(endpoint);
       return response.data;
     } catch (error) {
       console.error("Error fetching countries:", error);
@@ -133,9 +132,9 @@ const apiSettings = {
     }
   },
   fetchGlobal: async () => {
-    const endpoint = `${API_URL}regions/world`;
+    const endpoint = `v3/regions/world`;
     try {
-      const response = await axios.get(endpoint);
+      const response = await API_URL.get(endpoint);
       return response.data;
     } catch (error) {
       console.error("Error fetching global data:", error);
@@ -145,10 +144,10 @@ const apiSettings = {
 
   fetchRegions: async (searchTerm = null) => {
     const endpoint = searchTerm
-      ? `${API_URL}regions/${searchTerm}`
-      : `${API_URL}regions`;
+      ? `v3/regions/${searchTerm}`
+      : `v3/regions`;
     try {
-      const response = await axios.get(endpoint);
+      const response = await API_URL.get(endpoint);
       return response.data;
     } catch (error) {
       console.error("Error fetching regions data:", error);
@@ -157,9 +156,9 @@ const apiSettings = {
   },
 
   fetchSearchEsim: async (searchTerm) => {
-    const endpoint = `${SEARCH_BASE_URL}${searchTerm}`;
+    const endpoint = `v2/store/search/?q=${searchTerm}`;
     try {
-      const response = await axios.get(endpoint);
+      const response = await API_URL.get(endpoint);
       if (response.status === 200) {
         return response.data;
       } else {
@@ -172,9 +171,9 @@ const apiSettings = {
   },
 
   fetchPackage: async (searchTerm) => {
-    const endpoint = `${API_URL}packages/${searchTerm}`;
+    const endpoint = `v3/packages/${searchTerm}`;
     try {
-      const response = await axios.get(endpoint);
+      const response = await API_URL.get(endpoint);
       return response.data;
     } catch (error) {
       console.error("Error fetching available packages:", error);
@@ -183,9 +182,9 @@ const apiSettings = {
   },
 
   fetchAvailablePackages: async (searchTerm) => {
-    const endpoint = `${API_URL}operator/${searchTerm}/package?type=topup`;
+    const endpoint = `v3/operator/${searchTerm}/package?type=topup`;
     try {
-      const response = await axios.get(endpoint);
+      const response = await API_URL.get(endpoint);
       return response.data;
     } catch (error) {
       console.error("Error fetching available packages:", error);
@@ -194,9 +193,9 @@ const apiSettings = {
   },
 
   fetchReferralEnroll: async () => {
-    const endpoint = `${USER_INFO_URL}referral/enroll`;
+    const endpoint = `user/me/referral/enroll`;
     // try {
-    //   const response = await axios.get(endpoint);
+    //   const response = await API_URL.get(endpoint);
     //   return response.data;
     // } catch (error) {
 
@@ -211,9 +210,9 @@ const apiSettings = {
   },
 
   fetchCheckouts: async (id) => {
-    const endpoint = `${API_URL}checkouts`;
+    const endpoint = `v3/checkouts`;
     try {
-      const response = await axios.post(endpoint, { package_id: id });
+      const response = await API_URL.post(endpoint, { package_id: id });
       return response.data;
     } catch (error) {
       console.error("Error fetching global data:", error);
