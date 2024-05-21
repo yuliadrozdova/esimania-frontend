@@ -6,9 +6,7 @@ interface State extends SnackbarOrigin {
   open: boolean;
 }
 
-// style={{backgroundColor: 'rgb(252 165 165)'}} //error
-
-export default function PositionedSnackbar({ text, setIsOpen }) {
+export default function PositionedSnackbar({ message, setIsOpen }) {
   const [state, setState] = React.useState<State>({
     open: true,
     vertical: "top",
@@ -21,6 +19,10 @@ export default function PositionedSnackbar({ text, setIsOpen }) {
     setIsOpen(false)
   };
 
+  setTimeout(() => {
+    setIsOpen(false);
+  }, 3000);
+  
   return (
     <Box sx={{ width: 500 }}       
     >
@@ -29,9 +31,9 @@ export default function PositionedSnackbar({ text, setIsOpen }) {
         open={open}
         onClose={handleClose}
         key={vertical + horizontal}
-        style={{backgroundColor: 'rgb(220 252 231)'}}
+        style={{backgroundColor: message.isSuccess ? 'rgb(220, 252, 231)' : 'rgb(252 165 165)'}}
       >
-        {text}
+        {message.text}
       </Snackbar>
     </Box>
   );

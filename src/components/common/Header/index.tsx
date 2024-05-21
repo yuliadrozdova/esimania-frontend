@@ -7,14 +7,14 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import PixIcon from "@mui/icons-material/Pix";
 import { grey, red } from "@mui/material/colors";
 import "./header.scss";
-import { IS_AUTH } from "../../../config/config.tsx";
+import { isAuthenticated } from "../../../API/auth/authHelper.tsx";
 
 const Navigation: React.FC = () => {
   return (
     <div className="header-navigation d-sm-block ml-auto">
       <nav>
         <ul className="cf flex align-items-center flex-wrap justify-content-end">
-          <li className="nav-item-with-sub-menu">
+          <li className="nav-item-with-sub-menu pr-5">
             <div
               dir="ltr"
               className="c--shared_header_item-block header-item-block"
@@ -79,7 +79,7 @@ const Navigation: React.FC = () => {
               </ul>
             </div>
           </li>
-          <li className="nav-item-with-sub-menu">
+          <li className="nav-item-with-sub-menu pr-5">
             <div
               dir="ltr"
               className="c--shared_header_item-block header-item-block"
@@ -146,7 +146,7 @@ const Navigation: React.FC = () => {
               />
               <a
                 href="/auth/login"
-                className="d-inline-flex justify-content-start align-items-center"
+                className="d-inline-flex justify-content-start align-items-center hover:opacity-75"
                 data-testid="Log in-btn"
               >
                 <span className="c--shared_header_item header-item">
@@ -157,8 +157,8 @@ const Navigation: React.FC = () => {
                 /
               </span>
               <a
-                href="/auth/signup"
-                className="d-inline-flex justify-content-start align-items-center"
+                href="/auth/register"
+                className="d-inline-flex justify-content-start align-items-center hover:opacity-75"
                 data-testid="Sign up-btn"
               >
                 <span className="c--shared_header_item header-item">
@@ -205,11 +205,11 @@ const MoneyHeader: React.FC = () => {
 };
 
 const AuthorizedNavigation: React.FC = () => {
-  const userName = 'Ivan Ivanov';
+  const userName = "Ivan Ivanov";
   return (
     <div className="header-navigation d-sm-block">
       <nav>
-        <ul className="cf flex align-items-center flex-wrap justify-content-end border-l border-l-solid color-border-left-light pl-10 ml-10 pl-lg-20 ml-lg-20">
+        <ul className="cf flex align-items-center flex-wrap justify-content-end border-l border-l-solid color-border-left-light ml-10 ml-lg-20">
           <li data-testid="account-menu" className="">
             <div
               dir="ltr"
@@ -230,7 +230,7 @@ const AuthorizedNavigation: React.FC = () => {
               </a>
             </div>
           </li>
-          <li data-testid="account-menu" className="nav-item-with-sub-menu">
+          <li data-testid="account-menu" className="nav-item-with-sub-menu pr-5">
             <div
               dir="ltr"
               className="c--shared_header_item-block header-item-block"
@@ -317,6 +317,7 @@ const AuthorizedNavigation: React.FC = () => {
 };
 
 export default function Header() {
+  const IS_AUTH = isAuthenticated();
   return (
     <header className="c--shared_header header">
       <div className="header-content flex align-items-center">
