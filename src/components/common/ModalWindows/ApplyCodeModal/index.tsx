@@ -16,7 +16,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import LteMobiledataIcon from "@mui/icons-material/LteMobiledata";
 
 //Styles
-import './../../ModalWindows/modalWindow.scss';
+import "./../../ModalWindows/modalWindow.scss";
 
 type Props = {
   // props: Package;
@@ -54,7 +54,6 @@ const SearchCountry = ({ searchArray, callback }) => {
   );
 };
 
-
 const ApplyCodeModal: React.FC<Props> = ({ isOpen, onClose }) => {
   const handleClose = (event, reason) => {
     if (reason === "backdropClick") {
@@ -69,78 +68,51 @@ const ApplyCodeModal: React.FC<Props> = ({ isOpen, onClose }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-    <div className="modal-dialog modal-general modal-dialog-centered"><span></span>
-  <div id="payment-33899454-code-or-esimoney-modal___BV_modal_content_" className="modal-content">
-    <div id="payment-33899454-code-or-esimoney-modal___BV_modal_body_" className="modal-body">
-      <div  dir="ltr" className="c--modals_general-modal modal-general-close"><button 
-          type="button" className="btn"><span  data-testid="close-button"
-            className="icon-close-round-filled tw-text-5.5 tw-text-neutral-600"></span></button></div>
-      <div 
-        className="general-item-wrapper relative tw-flex tw-flex-col tw-h-full tw-w-full tw-pt-10 height-unset"
-        style={{minHeight: "540px;"}}>
-        <div  data-testid="Apply Code / Use Esimoney-title" className="general-item-wrapper-header mb-20">
-          <p >Apply Code / Use Esimoney</p>
-        </div>
-        <div 
-          className="c--checkout_apply-code-use-esimoney payment-apply-use-wrapper pb-40" checkout-id="33899454">
-          <div  className="payment-apply-use-header px-20 mb-20">
-            <p  className="title-sub">
-              Apply Code
-            </p>
-            <p  className="title-sub-description">
-              Please enter your discount or referral code to apply.
-            </p>
-          </div>
-          <div  className="payment-apply-use-apply-form px-20">
-            <form  className="">
-              <div  className="payment-apply-use-row flex justify-content-between align-items-start">
-                <div  className="payment-apply-use-input">
-                  <div  className="mb-0">
-                    <div  className="general-input">
-                      {/* <div  className="field">
-                        <input  id="discountReferralCode_input"
-                          data-testid="discount-referral-code-input" name="discountReferralCode"
-                          data-vv-validate-on="blur" type="text" className="input text-uppercase empty" aria-required="true"
-                          aria-invalid="false"> <label  for="discountReferralCode"
-                          data-testid="applied-code">Code</label></div>  */}
-                    </div>
-                  </div>
-                </div>
-                <div  className="payment-apply-use-input-button"><button  type="submit"
-                    data-testid="apply-esimoney-button" className="button button-secondary block btn-primary-hv">
-                    APPLY
-                  </button></div>
+      <div className="modal-dialog modal-general modal-dialog-centered">
+        <div className="modal-content ">
+          <div className="modal-body mh-540">
+            <div
+              dir="ltr"
+              className="c--modals_general-modal modal-general-close"
+            >
+              <CancelIcon onClick={onClose} className="sim-detail-close" />
+            </div>
+            <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md mx-auto">
+              <div className="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
+                <h2 className="text-xl font-bold">Apply Code / Use Airmoney</h2>
               </div>
-            </form>
-          </div>
-          <div  className="payment-apply-use-seperator mt-30 mb-30">
-            <p >
-              OR USE Esimoney
-            </p>
-          </div>
-          <div  className="payment-apply-use-esimoney-wrapper px-20">
-            <p  className="title-sub">
-              Use Esimoney
-            </p>
-            {/* <p  className="title-sub-description">You have a total of 
-            <span 
-                place="amount">US $0.00</span> Esimoney in your wallet.</p> */}
-            <div  className="insufficient-banner mt-20">
-              <div  className="insufficient-banner-inner">
-                <p  className="message">
-                  You don’t have enough Esimoney for this purchase. The minimum Esimoney amount must be US$1.
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold">Apply Code</h3>
+                <p className="text-sm text-gray-500">
+                  Please enter your discount or referral code to apply.
                 </p>
+                <div className="mt-2 flex">
+                  <input
+                    type="text"
+                    placeholder="Code"
+                    className="w-full p-2 border rounded-l-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                  <button className="p-2 bg-gray-800 text-white rounded-r-md hover:bg-gray-700">
+                    APPLY
+                  </button>
+                </div>
               </div>
-              <div  className="insufficient-banner-image"><img 
-                  src="" width="75" height="75"
-                  alt="" loading="lazy" /></div>
-            </div>   
+              <div className="mt-6 border-t border-gray-200 pt-4">
+                <h3 className="text-lg font-semibold">Use Airmoney</h3>
+                <p className="text-sm text-gray-500">
+                  You have a total of US $0.87 Airmoney in your wallet.
+                </p>
+                <div className="mt-2 bg-yellow-100 text-yellow-800 p-2 rounded-md flex items-center">
+                  <span>
+                    You don’t have enough Airmoney for this purchase. The
+                    minimum Airmoney amount must be US $1.
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div><span ></span>
-</div>
     </Modal>
   );
 };

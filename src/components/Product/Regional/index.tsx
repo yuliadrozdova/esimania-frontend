@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import apiSettings, { Country } from "../../../API/API.tsx";
-import TabPanel from "../../common/TabPanel/index.tsx";
+import { TabPanel } from "../../common/TabPanel/index.tsx";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CircularProgress from "@mui/material/CircularProgress";
 import "./regional.scss";

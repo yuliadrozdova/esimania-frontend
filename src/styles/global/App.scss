@@ -62,6 +62,16 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.esimania-logo {
+  margin: 0px 0px 8px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-family: __Plus_Jakarta_Sans_a182b8, __Plus_Jakarta_Sans_Fallback_a182b8, Helvetica, Arial, sans-serif;
+  color: black;
+}
+
 .main-title {
   font-size: 1.9375rem;
   width: 600px;
@@ -231,10 +241,6 @@ ul {
 
 .tw-z-10 {
   z-index: 10;
-}
-
-.tw-w-full {
-  width: 100%;
 }
 
 .tw-min-w-\[50\%\] {
@@ -726,9 +732,7 @@ ul {
 .display-none {
   display: none;
 }
-.d-grid {
-  display: grid;
-}
+
 
 @media (min-width:576px) {
   .display-sm-none {
@@ -739,38 +743,38 @@ ul {
     display: flex;
   }
 
-  .grid-cols-sm-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  // .grid-cols-sm-2 {
+  //   grid-template-columns: repeat(2, minmax(0, 1fr));
+  // }
 }
 
-@media (min-width:768px) {
-  .grid-cols-md-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
+// @media (min-width:768px) {
+//   .grid-cols-md-12 {
+//     grid-template-columns: repeat(12, minmax(0, 1fr));
+//   }
+// }
 
-@media (min-width:992px) {
-  .grid-cols-lg-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+// @media (min-width:992px) {
+//   .grid-cols-lg-1 {
+//     grid-template-columns: repeat(1, minmax(0, 1fr));
+//   }
 
-  .grid-cols-lg-12 {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
+//   .grid-cols-lg-12 {
+//     grid-template-columns: repeat(12, minmax(0, 1fr));
+//   }
+// }
 
-@media (min-width:992px) {
-  .col-span-lg-8 {
-    grid-column: span 8/span 8;
-  }
-}
+// @media (min-width:992px) {
+//   .col-span-lg-8 {
+//     grid-column: span 8/span 8;
+//   }
+// }
 
-@media (min-width:992px) {
-  .col-start-lg-3 {
-    grid-column-start: 3;
-  }
-}
+// @media (min-width:992px) {
+//   .col-start-lg-3 {
+//     grid-column-start: 3;
+//   }
+// }
 
 .gap-10 {
   gap: 10px;

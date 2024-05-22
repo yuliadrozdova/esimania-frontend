@@ -24,7 +24,7 @@ const DeleteAccount = () => {
             You can delete your account permanently. *Note that this process can
             take a while and can't be undone after completion.
           </p>
-          <div className="d-md-grid grid-cols-md-2 grid-cols-lg-7 gap-30">
+          <div className="md:grid md:grid-cols-2 lg:grid-cols-7 gap-30">
             <button className="button button-delete-outline small col-span-lg-1 col-span-lg-3 mt-5">
               DELETE ACCOUNT
             </button>

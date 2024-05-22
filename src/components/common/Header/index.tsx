@@ -216,7 +216,7 @@ const AuthorizedNavigation: React.FC = () => {
               className="c--shared_header_item-block header-item-block"
             >
               <a
-                href="/my-esims/"
+                href="/my-esims"
                 className="d-inline-flex justify-content-start align-items-center"
               >
                 <span className="c--shared_header_item header-item">
@@ -230,7 +230,10 @@ const AuthorizedNavigation: React.FC = () => {
               </a>
             </div>
           </li>
-          <li data-testid="account-menu" className="nav-item-with-sub-menu pr-5">
+          <li
+            data-testid="account-menu"
+            className="nav-item-with-sub-menu pr-5"
+          >
             <div
               dir="ltr"
               className="c--shared_header_item-block header-item-block"
@@ -321,21 +324,13 @@ export default function Header() {
   return (
     <header className="c--shared_header header">
       <div className="header-content flex align-items-center">
-        <div className="header-logo-link-wrapper flex justify-content-center align-items-center w-full align-items-md-start w-md-auto">
+        <div className="header-logo-link-wrapper flex  w-full align-items-md-start w-md-auto">
           <a
             href="/"
-            className="display-inline-flex nuxt-link-exact-active nuxt-link-active"
+            className="esimania-logo display-inline-flex nuxt-link-exact-active nuxt-link-active"
             aria-current="page"
           >
-            <img
-              src=""
-              width="149"
-              height="44"
-              alt="logo"
-              loading="eager"
-              data-testid="logo"
-              className="w-auto"
-            />
+            eSIMania.com
           </a>
         </div>
         <div className="store-link tw-py-2.5 lg:tw-block tw-border-solid tw-border-0 tw-border-zinc-300 ltr:tw-pl-5 ltr:tw-ml-5 ltr:tw-border-l rtl:tw-pr-5 rtl:tw-mr-5 rtl:tw-border-r">

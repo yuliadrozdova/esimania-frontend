@@ -14,6 +14,7 @@ import UserProfilePage from "./pages/Profile/index.tsx";
 import BuyEsimPage from "./pages/Buy/index.tsx";
 import Register from "./pages/Auth/Register/index.tsx";
 import ForgotPassword from "./pages/Auth/ForgotPassword/index.tsx";
+import MyEsimsPage from "./pages/MyEsims/index.tsx";
 // import SomeComponent from "./components/common/Breadcrumbs/index.tsx";
 // import MainComponent from "./pages/test.tsx";
 
@@ -30,6 +31,8 @@ const App: React.FC = () => {
           <Route path="/global-esim" element={<Home><Global /></Home>} />
           <Route path="/profile/:profilePage" element={<UserProfilePage />} />
           <Route path="/esim-buy/:packageName" element={<BuyEsimPage />} />
+          <Route path="/my-esims" element={<MyEsimsPage />} />
+          <Route path="/my-esims/:esimsType" element={<MyEsimsPage />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/register" element={<Register />} />
           <Route path="/auth/forgot-password" element={<ForgotPassword />} />

@@ -265,7 +265,7 @@ const PackageModal: React.FC<Props> = ({ props, isOpen, onClose }) => {
               <div>
                 <TopupSlider operatorId={props.operator.id} />
               </div>
-              <div className="d-grid grid-cols-1 grid-cols-sm-2 gap-30 mt-35 mt-sm-40 mb-40">
+              <div className="grid grid-cols-1 grid-cols-sm-2 gap-30 mt-35 mt-sm-40 mb-40">
                 <div>
                   <SupportedCountries props={props} />
                 </div>

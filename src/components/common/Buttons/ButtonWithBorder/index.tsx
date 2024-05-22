@@ -1,12 +1,12 @@
 import * as React from "react";
 
-function BuyButton() {
+function ButtonWithBorder({text}) {
   return (
     <div className="sim-item-bottom-button flex">
       <button type="button" className="btn btn-sim-item-btn btn-block">
-        BUY NOW
+        {text.toUpperCase()}
       </button>
     </div>
   );
 }
-export default BuyButton;
+export default ButtonWithBorder;

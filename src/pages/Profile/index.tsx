@@ -14,38 +14,41 @@ import Footer from "../../components/common/Footer/index.tsx";
 
 const UserProfilePage: React.FC = () => {
   const { profilePage } = useParams();
-  const [childComponent, setChildComponent] = React.useState<React.ReactNode>(null);
-  const [breadcrumbsLabelPage, setBreadcrumbsLabelPage] = React.useState<string | null>(null);
+  const [childComponent, setChildComponent] =
+    React.useState<React.ReactNode>(null);
+  const [breadcrumbsLabelPage, setBreadcrumbsLabelPage] = React.useState<
+    string | null
+  >(null);
 
   const getChildComponent = () => {
     if (!profilePage) {
-      setBreadcrumbsLabelPage('Account Information');
+      setBreadcrumbsLabelPage("Account Information");
       return <SettingsPage profileContent={profileContent} />;
     }
 
     switch (profilePage) {
       case "settings":
-        setBreadcrumbsLabelPage('Account Information');
+        setBreadcrumbsLabelPage("Account Information");
         return <SettingsPage profileContent={profileContent} />;
         break;
       case "money":
-        setBreadcrumbsLabelPage('Money & Membership');
+        setBreadcrumbsLabelPage("Money & Membership");
         return <MoneyPage />;
         break;
       case "credit-cards":
-        setBreadcrumbsLabelPage('Saved Cards');
+        setBreadcrumbsLabelPage("Saved Cards");
         return <CreditCardsPage />;
         break;
       case "referral":
-        setBreadcrumbsLabelPage('Refer & Earn');
+        setBreadcrumbsLabelPage("Refer & Earn");
         return <ReferralPage />;
         break;
       case "orders":
-        setBreadcrumbsLabelPage('Orders');
+        setBreadcrumbsLabelPage("Orders");
         return <OrdersPage />;
         break;
       default:
-        setBreadcrumbsLabelPage('Account Information');
+        setBreadcrumbsLabelPage("Account Information");
         return <SettingsPage profileContent={profileContent} />;
         break;
     }
@@ -80,14 +83,21 @@ const UserProfilePage: React.FC = () => {
     <React.Fragment>
       <Header />
       <h1 className="main-title typo-h1">Profile</h1>
-      <BreadcrumbsComponent items={breadcrumbsData} unclickableLabel={breadcrumbsLabelPage}/>
+      <BreadcrumbsComponent
+        items={breadcrumbsData}
+        unclickableLabel={breadcrumbsLabelPage}
+      />
       <div>
-        <div className="flex justify-between">
-          <div>
-            <NavigationForBlocks navItems={navItems}/>
-            <LogoutButton />
+        <div className="grid grid-cols-6 gap-30 md:grid-cols-12">
+          <div className="hidden lg:flex lg:col-span-4">
+            <div className="w-full">
+              <NavigationForBlocks navItems={navItems} />
+              <LogoutButton />
+            </div>
           </div>
-          <div className="md:w-2/3">{childComponent}</div>
+          <div className="col-span-6 md:col-span-12 lg:col-span-7 lg:col-start-6">
+            {childComponent}
+          </div>
         </div>
       </div>
       <Footer />

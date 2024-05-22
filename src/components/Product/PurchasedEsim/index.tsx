@@ -1,18 +1,16 @@
 import React from "react";
-import "./packageInfo.scss";
 import InfoItem from "../InfoItem/index.tsx";
-import { Package } from "../../../API/API.tsx";
 import PackageModal from "../../common/ModalWindows/PackageInfoModal/index.tsx";
 import ButtonWithBorder from "../../common/Buttons/ButtonWithBorder/index.tsx";
 
 // Types
 type Props = {
-  props: Package;
+  props: any;
   children?: any;
   callback?: () => void;
 };
 
-const PackageInfo: React.FC<Props> = ({ props }) => {
+const PurchasedEsim: React.FC<Props> = ({ props }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const openModal = () => {
@@ -36,39 +34,35 @@ const PackageInfo: React.FC<Props> = ({ props }) => {
                 {props.operator.title}
               </p>
             </div>
-            {/* <div className="sim-item-image">
-              <img
-                src={props.operator.image.url}
-                width="140"
-                alt={props.operator.title}
-                className="lazyLoad"
-              />
-            </div> */}
           </div>
 
           <div className="sim-item-info">
             <ul className="sim-item-list">
+              <InfoItem name={"ICCID"} value={props.iccid} />
+
               <InfoItem name={"COVERAGE"} value={props.operator.countries} />
-              <InfoItem name={"DATA"} value={props.data} />
+              {/* <InfoItem name={"REMAINING DATA"} value={props.status} /> //?????????*/}
+
+              {/* <InfoItem name={"DATA"} value={props.data} /> */}
               {props?.voice && (
                 <InfoItem name={"CALLS"} value={props.voice + " Mins"} />
               )}
               {props?.text && (
                 <InfoItem name={"TEXTS"} value={props.text + " SMS"} />
               )}
-              <InfoItem name={"VALIDITY"} value={props.validity} />
-              <InfoItem name={"PRICE"} value={"US $" + props.price} />
+              {/* <InfoItem name={"VALIDITY"} value={props.validity} /> */}
+              {/* <InfoItem name={"PRICE"} value={"US $" + props.price} /> */}
             </ul>
           </div>
 
           <div className="sim-item-bottom">
-            <ButtonWithBorder text={'Buy now'}/>
+            <ButtonWithBorder text={'Details'}/>
           </div>
         </div>
       </div>
-      {isOpen && <PackageModal props={props} isOpen={isOpen} onClose={closeModal} />}
+      {/* {isOpen && <PackageModal props={props} isOpen={isOpen} onClose={closeModal} />} */}
     </React.Fragment>
   );
 };
 
-export default PackageInfo;
+export default PurchasedEsim;

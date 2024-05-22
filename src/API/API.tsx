@@ -204,7 +204,7 @@ const apiSettings = {
     // }
     return {
       show_banner: true,
-      code: "YULIYA3205",
+      code: "REFERRALCODE3205",
       link: "",
     };
   },

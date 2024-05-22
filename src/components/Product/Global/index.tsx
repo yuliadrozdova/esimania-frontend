@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import apiSettings, { Country, Package } from "../../../API/API.tsx";
 import PackageInfo from "../PackageInfo/index.tsx";
-import TabPanel from "../../common/TabPanel/index.tsx";
+import { TabPanel } from "../../common/TabPanel/index.tsx";
 import CircularProgress from "@mui/material/CircularProgress";
 
 function ButtonBlock({ callback }) {

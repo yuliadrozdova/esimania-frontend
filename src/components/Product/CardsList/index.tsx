@@ -5,7 +5,7 @@ import apiSettings, { Country } from "../../../API/API.tsx";
 // import "../Regional/regional.scss";
 import PackageInfo from "../PackageInfo/index.tsx";
 import ShowMoreButton from "../../common/Buttons/ShowMore/index.tsx";
-import TabPanel from "../../common/TabPanel/index.tsx";
+import { TabPanel } from "../../common/TabPanel/index.tsx";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export default function CardsList() {

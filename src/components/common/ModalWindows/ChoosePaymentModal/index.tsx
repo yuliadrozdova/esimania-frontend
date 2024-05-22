@@ -109,7 +109,7 @@ const ChoosePaymentMethodModal: React.FC<Props> = ({ isOpen, onClose }) => {
             </div>
 
             <div
-              className="general-item-wrapper relative tw-flex tw-flex-col tw-h-full tw-w-full tw-pt-10 height-unset"
+              className="general-item-wrapper relative tw-flex tw-flex-col tw-h-full w-full tw-pt-10 height-unset"
               // style={{ minHeight: "540px;" }}
             >
               <div className="c--checkout_choose-payment-method flex flex-column h-100">
@@ -130,7 +130,7 @@ const ChoosePaymentMethodModal: React.FC<Props> = ({ isOpen, onClose }) => {
                           Please select your payment method down below.
                         </p>
                       </div>
-                      <div className="payment-choose-method-list d-grid grid-cols-1 gap-10 px-20">
+                      <div className="payment-choose-method-list grid grid-cols-1 gap-10 px-20">
                         <div
                           data-testid="payment-method-top-item-0"
                           className="payment-choose-method-item flex justify-content-center flex-column relative cursor-pointer"
@@ -219,7 +219,7 @@ const ChoosePaymentMethodModal: React.FC<Props> = ({ isOpen, onClose }) => {
                       className="step step-credit-cards"
                       style={{ display: "none;" }}
                     >
-                      <div className="payment-choose-method-form d-grid grid-cols-1 gap-10 px-20"></div>
+                      <div className="payment-choose-method-form grid grid-cols-1 gap-10 px-20"></div>
                     </div>
                   </div>
                 </div>
