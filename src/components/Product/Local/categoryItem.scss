@@ -1,0 +1,25 @@
+.wrapper{
+  display: block;
+  background: var(--white);
+  min-width: 200px;
+  color: var(--darkGray);
+  font-size: var(--fontSmall); //.9375rem
+  transform: all 0.3s;
+  outline: none;
+  cursor: pointer;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,.15);
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 20px 12px;
+  height: 55px;
+}
+
+.contentWrapper{  
+  display: flex;
+  justify-content: flex-start;
+}

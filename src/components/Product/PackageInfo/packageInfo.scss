@@ -1,0 +1,94 @@
+.sim-detail.theme-light .sim-detail-operator p {
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.sim-item {
+  background: linear-gradient(90deg, #f4f4f4, #f2f2f2);
+  border-radius: 7px;
+  // box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  min-height: 286px;
+}
+.sim-item-image {
+  border-radius: 12px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
+  margin-top: -23px;
+  max-height: 88px;
+  min-height: 88px;
+  overflow: hidden;
+}
+.sim-item-image img {
+  height: 88px;
+  width: auto;
+}
+.sim-item-header {
+  align-items: flex-start;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 13px 20px 20px;
+}
+.sim-item-header-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: calc(100% - 140px);
+  min-height: 63px;
+  width: 100%;
+}
+.sim-item-header-info p.operator-title {
+  max-width: calc(100% - 10px);
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  line-height: 1.1578947368;
+  word-break: break-word;
+}
+.sim-item-list li {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+.sim-item-bottom {
+  border-top: 1px solid transparent;
+  padding: 20px;
+}
+.sim-item-bottom-button .btn.btn-sim-item-btn {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1;
+  padding: 15px 20px;
+  transition: all 0.25s;
+}
+.sim-item-bottom-button .btn.btn-sim-item-btn:focus {
+  box-shadow: none;
+}
+.sim-item.theme-light .sim-item-header {
+  border-bottom-color: rgba(237, 237, 237, 0.1);
+}
+.sim-item.theme-light .sim-item-header p.operator-title,
+.sim-item.theme-light .sim-item-list {
+  color: #fff;
+}
+.sim-item.theme-light .sim-item-bottom {
+  border-top-color: rgba(237, 237, 237, 0.1);
+}
+.sim-item.theme-light .sim-item-bottom-button .btn.btn-sim-item-btn {
+  border-color: #fff;
+  color: #fff;
+}
+.sim-item.theme-light .sim-item-bottom-button .btn.btn-sim-item-btn:focus,
+.sim-item.theme-light .sim-item-bottom-button .btn.btn-sim-item-btn:hover {
+  background-color: #fff;
+  color: #4a4a4a;
+}
